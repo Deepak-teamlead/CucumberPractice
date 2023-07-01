@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Practice_JavaandSelenium" />
         <module name="Practice_Cucumber_Jan_2022" />
       </profile>
     </annotationProcessing>
