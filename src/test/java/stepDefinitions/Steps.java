@@ -1,14 +1,16 @@
 package stepDefinitions;
 import io.cucumber.java.en.*;
+import org.openqa.selenium.WebDriver;
 import pageObjects.LoginpageObjects;
 public class Steps {
+
     LoginpageObjects obj=new LoginpageObjects();
     @Given("I launch browser and open application url")
     public void i_open_application_url() throws Exception {
         obj.loginapplication();
     }
     @When("I enter username in username field")
-    public void i_enter_username() {
+    public void i_enter_username() throws Exception {
         obj.enterusername();
     }
     @When("I enter password in password field")

@@ -1,5 +1,4 @@
 package utilities;
-import com.google.common.collect.ClassToInstanceMap;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -19,7 +18,8 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 public class Baseclass {
-    protected WebDriver driver;
+   public WebDriver driver;
+
 //******************************************************************************
 //This Method Gives element count of particular Locators in a Web Page
     public void size(String locator) {
