@@ -17,15 +17,37 @@ import java.io.File;
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
+
 public class Baseclass {
    public WebDriver driver;
-
-//******************************************************************************
+   //******************************************************************************
 //This Method Gives element count of particular Locators in a Web Page
     public void size(String locator) {
         System.out.println(driver.findElements(By.tagName(locator)).size());
     }
     //******************************************************************************
+    //This method is used to initialize browser
+    public void launchBrowser(String browser){
+        driver = null;
+        if (browser.equalsIgnoreCase("Chrome")) {
+            driver = new ChromeDriver();
+        } else if (browser.equalsIgnoreCase("Firefox")) {
+            driver = new FirefoxDriver();
+        } else if (browser.equalsIgnoreCase("Edge")) {
+            driver = new EdgeDriver();
+        }
+    }
+    //********************************
+    //This method is used to open url
+    public void openurl(String url){
+        driver.manage().deleteAllCookies();
+        driver.get(url);
+        driver.manage().window().maximize();
+    }
+    //This method is used to quit browser
+    public void quitBrowser(){
+        driver.quit();
+    }
     //This method is used to open url in specified browser
     public void browserAndUrl(String browser, String url) throws Exception {
         driver = null;
