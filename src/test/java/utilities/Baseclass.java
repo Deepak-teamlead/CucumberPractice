@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Set;
 
 public class Baseclass {
-   public WebDriver driver;
+   protected WebDriver driver;
    //******************************************************************************
 //This Method Gives element count of particular Locators in a Web Page
     public void size(String locator) {
@@ -40,14 +40,19 @@ public class Baseclass {
     //********************************
     //This method is used to open url
     public void openurl(String url){
-        driver.manage().deleteAllCookies();
         driver.get(url);
+        driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
     }
     //This method is used to quit browser
-    public void quitBrowser(){
+    public void quitdriver(){
         driver.quit();
     }
+    //This method is used to close tab
+    public void closedriver(){
+        driver.quit();
+    }
+
     //This method is used to open url in specified browser
     public void browserAndUrl(String browser, String url) throws Exception {
         driver = null;
@@ -358,5 +363,10 @@ public class Baseclass {
         }
     }
     //*************************************
+    // This method will return driver instance
+    public WebDriver getDriverInstance(){
+        return driver;
+    }
+
 
 }
