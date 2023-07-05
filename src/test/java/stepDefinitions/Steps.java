@@ -7,11 +7,11 @@ public class Steps {
     public void i_open_application_url() throws Exception {
       obj.launchapp();
     }
-    @When("I enter {string} in the username field")
+    @When("^I enter (.+) in the username field$")
     public void i_enter_username(String uname) throws Exception {
       obj.enterusername(uname);
     }
-    @When("I enter {string} in the password field")
+    @When("^I enter (.+) in the password field$")
     public void i_enter_password(String pwd)  {
       obj.enterpassword(pwd);
     }
