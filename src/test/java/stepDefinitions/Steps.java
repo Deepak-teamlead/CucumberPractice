@@ -1,12 +1,7 @@
 package stepDefinitions;
 import io.cucumber.java.en.*;
 import pageObjects.PF_LoginpageObjects;
-import utilities.Baseclass;
-public class Steps extends Baseclass  {
-    // creating constructor to call Baseclass driver instance
-    public Steps(){
-        this.driver=getDriverInstance();
-    }
+public class Steps {
     PF_LoginpageObjects obj=new PF_LoginpageObjects();
     @Given("I launch browser and open application url")
     public void i_open_application_url() throws Exception {

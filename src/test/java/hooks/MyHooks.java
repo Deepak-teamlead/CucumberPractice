@@ -1,11 +1,7 @@
 package hooks;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import utilities.Baseclass;
-public class MyHooks extends Baseclass {
-    public MyHooks(){
-        this.driver=getDriverInstance();
-    }
+public class MyHooks{
     @Before
     public void setup() throws Exception {
         System.out.println("This is Before hook-runs before every scenario");
