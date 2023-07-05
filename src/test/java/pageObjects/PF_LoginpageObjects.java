@@ -6,13 +6,13 @@ public class PF_LoginpageObjects extends Baseclass {
     public void launchapp() throws Exception {
        browserAndUrl("chrome","https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
     }
-    public void enterusername() throws Exception {
+    public void enterusername(String uname) throws Exception {
         Thread.sleep(1000);
         WebElement username=driver.findElement(By.xpath("//input[@placeholder='Username']"));
-        username.sendKeys("Admin");
+        username.sendKeys(uname);
     }
-    public void enterpassword(){
-        driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys("admin123");
+    public void enterpassword(String pwd){
+        driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys(pwd);
     }
     public void clicklogin(){
         driver.findElement(By.xpath("//button[@type='submit']")).click();
@@ -22,9 +22,9 @@ public class PF_LoginpageObjects extends Baseclass {
         driver.findElement(By.xpath("//h6[normalize-space()='Dashboard']")).isDisplayed();
         driver.close();
     }
-    public void invalidusername() throws Exception{
+    public void invalidusername(String uname) throws Exception{
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//input[@placeholder='Username']")).sendKeys("Admin1");
+        driver.findElement(By.xpath("//input[@placeholder='Username']")).sendKeys(uname);
     }
     public void verifyerrormessage()throws Exception{
         Thread.sleep(2000);

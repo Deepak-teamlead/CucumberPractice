@@ -7,13 +7,13 @@ public class Steps {
     public void i_open_application_url() throws Exception {
       obj.launchapp();
     }
-    @When("I enter username in the username field")
-    public void i_enter_username() throws Exception {
-      obj.enterusername();
+    @When("I enter {string} in the username field")
+    public void i_enter_username(String uname) throws Exception {
+      obj.enterusername(uname);
     }
-    @When("I enter password in the password field")
-    public void i_enter_password() throws Exception {
-      obj.enterpassword();
+    @When("I enter {string} in the password field")
+    public void i_enter_password(String pwd)  {
+      obj.enterpassword(pwd);
     }
     @When("I click on login button")
     public void i_click_login() {
@@ -24,11 +24,6 @@ public class Steps {
        obj.validateloginpage();
     }
     //
-    @When("I enter invalid username in the username field")
-    public void i_enter_invalid_username() throws Exception {
-       obj.invalidusername();
-    }
-
     @Then("I verify error message")
     public void i_verify_error_message() throws Exception {
      obj.verifyerrormessage();
