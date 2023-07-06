@@ -6,7 +6,10 @@ import stepDefinitions.Steps;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "./Features/Login.feature",
                   glue= {"Steps","hooks"},
-                  plugin={"pretty","html:test-output/CucumberReports/CucumberReport.html"})
+                  plugin={"pretty","html:test-output/CucumberReports/CucumberReport.html"},
+                 monochrome=true,
+                  dryRun=false,
+                  tags= "@Reression")
 
 
 public class TestRunner {
