@@ -1,8 +1,10 @@
-Feature: Login functionality
 @All
+Feature: Login functionality
+
   Background:
     Given I launch browser and open application url
-  @Reression
+
+  @Regression
   Scenario Outline: verify login functionality with valid credentials
     When I enter <username> in the username field
     And I enter <password> in the password field
@@ -12,6 +14,7 @@ Feature: Login functionality
     Examples:
       | username | password |
       | Admin   | admin123 |
+
   @Daily
   Scenario Outline: verify login functionality with invalid credentials
     When I enter <username> in the username field
