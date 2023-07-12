@@ -1,3 +1,4 @@
+@All
 Feature: Google search
 
   Scenario: Google search functionality

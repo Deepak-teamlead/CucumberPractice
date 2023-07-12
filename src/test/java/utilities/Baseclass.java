@@ -9,9 +9,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import ru.yandex.qatools.ashot.AShot;
-import ru.yandex.qatools.ashot.Screenshot;
-import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.time.Duration;
@@ -235,17 +232,6 @@ public class Baseclass {
             FileHandler.copy(sourcefile, new File(path));
         } catch (Exception e) {
             System.out.println("unable to capture visible page screenshot");
-        }
-    }
-    //***********************************************
-    // Taking screenshot of fullpage using Ashot()
-    public void screenshotFullPage(String path) throws Exception {
-        try {
-            Screenshot s = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
-            ImageIO.write(s.getImage(), "PNG", new File(path));
-
-        } catch (Exception e) {
-            System.out.println("unable to capture full page screenshot");
         }
     }
     //***********************************************
